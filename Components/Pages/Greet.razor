@@ -1,0 +1,20 @@
+﻿@page "/greet"
+
+<h3>Enter Your Name</h3>
+<input @bind="userName" placeholder="Enter Your Name" />
+<p>Hello, @userName!</p>
+
+@code {
+    private string userName = string.Empty;
+}
+
+<button @onclick="ShowCurrentTime">Show Current Time</button>
+<p>@currentTime</p>
+
+@code {
+    private string currentTime;
+
+    private void ShowCurrentTime(){
+        currentTime = DateTime.Now.ToString("hh:mm:ss tt ");
+    }
+}
